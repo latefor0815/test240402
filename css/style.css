@@ -54,10 +54,6 @@ a {
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-columns: repeat(3, 1fr);
-<<<<<<< HEAD
-=======
-  /* 그리드 내부에서의 행, 열에 여백 주기.  */
->>>>>>> e0958419147d1fece00531925b140aa409aeeede
   column-gap: 20px;
   row-gap: 20px;
 }
@@ -69,9 +65,5 @@ img {
 }
 
 .picture_container {
-<<<<<<< HEAD
   border: 7px pink dotted ;
-=======
-  border: 5px pink dotted ;
->>>>>>> e0958419147d1fece00531925b140aa409aeeede
 }
