@@ -1,50 +1,93 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>WEB1 - WEB </title>
-  <meta charset="utf-8">
-  <!-- css 폴더안에, css 문법을 모두 적어서, 해당 파일만 불러와서, 
-  효과 주기.  -->
-  <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>동물 홈페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .animal-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .animal-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-
 <body>
-
-  <h1><a href="index.html">WEB</font></a></h1>
-  <!-- 순서1, 자식1, ol, 자식2 : h2, p
-  태그 3개를 grid 아이디로 div로 묶기 -->
-
-  <div id="grid">
-    <ol>
-      <li><a href="1.html" class="saw">HTML</a></li>
-      <li><a href="2.html" class="saw" id="active">CSS</a></li>
-      <li><a href="3.html">JavaScript</a></li>
-      <li><a href="4.html">사진첩</a></li>
-    </ol>
-    <!-- 순서2 , h2 , p 태그 2개를 묶기.  -->
-    <div id="article">
-      <h2>WEB이란 무엇인가?</h2>
-      <p style="margin-top: 40px;">
-        The World Wide Web (WWW), commonly known as the Web, is the world's dominant software platform.[1] It was
-        originally a hypertext document management system[2] accessed over the Internet.[3]
-        The resources of the Web are transferred via the Hypertext Transfer Protocol (HTTP), may be accessed by users by
-        a software application called a web browser, and are published by a software application called a web server.
-        Web resources may be any type of downloaded media, but web pages are hypertext documents formatted in
-        Hypertext Markup Language (HTML). Special HTML syntax displays embedded hyperlinks with URLs, which permits
-        users
-        to navigate to other web resources. In addition to text, web pages may contain references to images, video,
-        audio,
-        and
-        software components, which are either displayed or internally executed in the user's web browser to render pages
-        or
-        streams of multimedia conten
-      </p>
-      <!-- 순서2, 닫는 태그 -->
+    <header>
+        <button id="signup">회원가입</button>
+        <button id="login">로그인</button>
+    </header>
+    <div class="container">
+        <img class="animal-img" src="animal1.jpg" alt="동물1">
+        <img class="animal-img" src="animal2.jpg" alt="동물2">
+        <img class="animal-img" src="animal3.jpg" alt="동물3">
+        <img class="animal-img" src="animal4.jpg" alt="동물4">
+        <img class="animal-img" src="animal5.jpg" alt="동물5">
+        <img class="animal-img" src="animal6.jpg" alt="동물6">
+        <img class="animal-img" src="animal7.jpg" alt="동물7">
+        <img class="animal-img" src="animal8.jpg" alt="동물8">
+        <img class="animal-img" src="animal9.jpg" alt="동물9">
     </div>
-    <!-- 아이디 grid 인 div 은 닫는 태그 -->
-  </div>
 
+    <script>
+        const loginBtn = document.getElementById('login');
+        const signupBtn = document.getElementById('signup');
+        const animalImages = document.querySelectorAll('.animal-img');
+
+        loginBtn.addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+
+        signupBtn.addEventListener('click', () => {
+            window.location.href = 'signup.html';
+        });
+
+        animalImages.forEach(img => {
+            img.addEventListener('click', () => {
+                const animalName = img.alt;
+                const searchUrl = `https://ko.wikipedia.org/wiki/${encodeURIComponent(animalName)}`;
+                window.open(searchUrl, '_blank');
+            });
+        });
+    </script>
 </body>
-
 </html>
