@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 지금은 학습용으로 html문서 안에서 연습장처럼 사용하고, 실무, 무조건 파일 분리해서 작업함. -->
+    <script>
+        // document 객체안에(수납도구 : 속성,함수들(=메서드)
+        // write 함수는 html 문서에 출력을 담당하는 기능)
+    // <! --write 함수에서 보통 사용할때 소괄호안에 무언가 값을 넣어요. 파라미터 인자값
+    // ! 보통문장ㄹ들은 :큰따옴표(""), 작은따옴표('')안에 표기
+        document.write("<h1>오늘 점심은 뭐 먹지?</h1>")
+        document.write("<h2>오늘 메뉴는 수제 버거</h2>")
+        document.write(1+1)
+        document.write("<br>")
+        document.write("1+1")
+    </script>
+    <br>
+    <script>
+         if (window.confirm("Do you really want to leave?")) {
+   alert("오늘 국밥 먹음!");
+ }
+    </script>
+
+<input type="button" value="alertTest" onclick="
+alert('alertTest 중입니다.')
+">
+
+<input type="button" value="alertTest" onclick="
+if (window.confirm('Do you really want to leave?')) {
+   alert('오늘 국밥 먹음!')
+}
+">
+<input type="text" value="onchange 테스트" onchange="alert('changed')">
+<br>
+<input id="123" type="text" onkeydown="alert('key down')">
+<input type="button" value="다 지우기" 
+onclick="document.getElementById('123').value = '';">
+
+</script>
+
+
+    
+
+</body>
+</html>
